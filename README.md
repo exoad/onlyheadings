@@ -1,3 +1,3 @@
-# compass
+# Only Headings
 
-A new Flutter project.
+A minimal compass for your Android device
