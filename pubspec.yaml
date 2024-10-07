@@ -1,7 +1,7 @@
 name: compass
 description: "A simple and minimal compass"
 publish_to: 'none'
-version: 0.1.0
+version: 0.0.1
 
 environment:
   sdk: ^3.5.1
@@ -9,8 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_displaymode: ^0.6.0
   latext: ^0.4.1
   sensors_plus: ^6.0.1
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   flutter_test:

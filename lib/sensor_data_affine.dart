@@ -35,3 +35,30 @@ double strength(SensorData data) =>
   double mag = strength(data);
   return (uX: data.x / mag, uY: data.y / mag, uZ: data.z / mag);
 }
+
+String toCardinalName(double heading) {
+  heading = heading % 360;
+  if (heading < 0) {
+    heading += 360;
+  }
+  switch (heading) {
+    case double h when (h >= 337.5 || h < 22.5):
+      return "N ";
+    case double h when (h >= 22.5 && h < 67.5):
+      return "NE";
+    case double h when (h >= 67.5 && h < 112.5):
+      return "E ";
+    case double h when (h >= 112.5 && h < 157.5):
+      return "SE";
+    case double h when (h >= 157.5 && h < 202.5):
+      return "S ";
+    case double h when (h >= 202.5 && h < 247.5):
+      return "SW";
+    case double h when (h >= 247.5 && h < 292.5):
+      return "W";
+    case double h when (h >= 292.5 && h < 337.5):
+      return "NE";
+    default:
+      return "??";
+  }
+}

@@ -13,7 +13,7 @@ class DefaultCompassPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
       ..color = kMajorHeadings
-      ..strokeWidth = 6
+      ..strokeWidth = 8
       ..filterQuality = FilterQuality.high
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
@@ -23,7 +23,6 @@ class DefaultCompassPainter extends CustomPainter {
     double radius = size.width / 2;
     Offset center = Offset(size.width / 2, size.height / 2);
     paint.color = kNorthSide;
-    paint.strokeWidth = 10;
     canvas.drawLine(
         Offset(center.dx + radius * cos(MathUtil.degToRads(northAngle)),
             center.dy + radius * sin(MathUtil.degToRads(northAngle))),
@@ -31,7 +30,6 @@ class DefaultCompassPainter extends CustomPainter {
             center.dy + (radius - 34) * sin(MathUtil.degToRads(northAngle))),
         paint);
     paint.color = kMajorHeadings;
-    paint.strokeWidth = 6;
     for (int i = 90; i < 360; i += 90) {
       double angle = MathUtil.degToRads(i.toDouble());
       canvas.drawLine(
@@ -76,3 +74,5 @@ class DefaultCompassPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }
+
+
